@@ -1,62 +1,1044 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>Ink - Ionic Creator</title>
+    <title> Sky Mods Shop &mdash;</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="ZLoGKjwTYdatIMhVR6vNcx64605TnvRrgo8GvIb9">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.2.4/sweetalert2.min.css" type="text/css">
+  <link rel="stylesheet" href="https://goldengodz.com/css/platforms.css?v=1534262002">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<style type="text/css">
+    #exTab1 .tab-content {
+        color : white;
+        padding : 5px 15px;
+    }
+    #exTab1 .nav-pills > li > a {
+        border-radius: 0;
+    }
+    .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+        background-color: #555;
+    }
+    body {
+        background: url('https://goldengodz.com/img/bg.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /*background-color: #1f2020;*/
+        position: relative;
+        overflow-x: hidden;
+        color: #fff;
+        padding : 10px ;
 
-  <link rel="stylesheet" href="/css/app.css">
-  <link rel="stylesheet" href="/css/share.css">
-  <link rel="icon" href="/img/favicon.png">
-  <script type="text/javascript">
-    window.load_iconset = 'ionicons';
-  </script>
-</head>
-<body class="preview-ios">
-  <div id="share">
+    }
+    .alert {
+        opacity: 0.8;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+    .alert-dark {
+        color: #FFFFFF;
+        border-color: #26282a;
+        background-color: #373a3c;
+    }
+    .table>tbody>tr>td, .table>tbody>tr>th,
+    .table>tfoot>tr>td, .table>tfoot>tr>th,
+    .table>thead>tr>td, .table>thead>tr>th {
+        padding: 4px;
+        vertical-align: middle;
+        border-top: none;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) {
+        background-color: #242424;
+    }
+    .table-hover > tbody > tr:hover {
+        background-color: #2e2e2e;
+    }
+    .pagination {
+        margin-top:0px;
+    }
+    .btn-block-2 {
+        display: block;
+        width: 100%;
+        height: 74px !important;
+    }
+    /*-------------------------------*/
+    /*           Shop Styles         */
+    /*-------------------------------*/
+    .package:hover {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+    .package {
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        height: 426px;
+        font-family: 'Lato', sans-serif;
+        /*font-style: italic;*/
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .info-bar {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+        margin: 16px;
+        text-transform: uppercase;
+    }
+    .p-title {
+        background: rgba(0, 0, 0, 0.70);
+        height: 55px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+    }
+    .p-box {
+        background: rgba(0, 0, 0, 0.70);
+        line-height: 36px;
+        width: 200px;
+        font-family: 'Lato', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        color: #fff;
+        margin: 10px auto;
+        text-transform: uppercase;
+        padding: 6px;
+        text-align: left;
+    }
+    .p-box > ul > li {
+        list-style-image: url('https://goldengodz.com/img/check.png');
+    }
+    .p-info {
+        background: rgba(0, 0, 0, 0.70);
+        line-height: 27px;
+        height: 27px;
+        font-family: 'Lato', sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        color: #fff;
+        margin: 13px auto;
+        text-transform: uppercase;
+    }
+    .buy {
+        background: rgba(0, 0, 0, 0.70);
+        border-radius: 5px;
+        position: relative;
+        width: 93px;
+        height: 23px;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    /*-------------------------------*/
+    /*          Sidebar Styles       */
+    /*-------------------------------*/
+    body, html { height: 100%;}
+    .nav .open > a,
+    .nav .open > a:hover,
+    .nav .open > a:focus { background-color: transparent; }
+    /*-------------------------------*/
+    /*           Wrappers            */
+    /*-------------------------------*/
+    #wrapper {
+        padding-left: 0;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    #wrapper.toggled {
+        padding-left: 220px;
+    }
+    #sidebar-wrapper {
+        z-index: 1000;
+        left: 220px;
+        width: 0;
+        height: 100%;
+        margin-left: -220px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #1a1a1a;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    #sidebar-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 220px;
+    }
+    #page-content-wrapper {
+        width: 100%;
+        padding-top: 70px;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: absolute;
+        margin-right: -220px;
+    }
+    /*-------------------------------*/
+    /*       Hamburger-Cross         */
+    /*-------------------------------*/
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        z-index: 999;
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-left: 15px;
+        background: transparent;
+        border: none;
+    }
+    .hamburger:hover,
+    .hamburger:focus,
+    .hamburger:active {
+        outline: none;
+    }
+    .hamburger.is-closed:before {
+        content: '';
+        display: block;
+        width: 100px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 32px;
+        text-align: center;
+        opacity: 0;
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-closed:hover:before {
+        opacity: 1;
+        display: block;
+        -webkit-transform: translate3d(-100px,0,0);
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-closed .hamb-top,
+    .hamburger.is-closed .hamb-middle,
+    .hamburger.is-closed .hamb-bottom,
+    .hamburger.is-open .hamb-top,
+    .hamburger.is-open .hamb-middle,
+    .hamburger.is-open .hamb-bottom {
+        position: absolute;
+        left: 0;
+        height: 4px;
+        width: 100%;
+    }
+    .hamburger.is-closed .hamb-top,
+    .hamburger.is-closed .hamb-middle,
+    .hamburger.is-closed .hamb-bottom {
+        background-color: #FFFFFF;
+    }
+    .hamburger.is-closed .hamb-top {
+        top: 5px;
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-closed .hamb-middle {
+        top: 50%;
+        margin-top: -2px;
+    }
+    .hamburger.is-closed .hamb-bottom {
+        bottom: 5px;
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-closed:hover .hamb-top {
+        top: 0;
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-closed:hover .hamb-bottom {
+        bottom: 0;
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-open .hamb-top,
+    .hamburger.is-open .hamb-middle,
+    .hamburger.is-open .hamb-bottom {
+        background-color: #FFFFFF;
+    }
+    .hamburger.is-open .hamb-top,
+    .hamburger.is-open .hamb-bottom {
+        top: 50%;
+        margin-top: -2px;
+    }
+    .hamburger.is-open .hamb-top {
+        -webkit-transform: rotate(45deg);
+        -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+    }
+    .hamburger.is-open .hamb-middle { display: none; }
+    .hamburger.is-open .hamb-bottom {
+        -webkit-transform: rotate(-45deg);
+        -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+    }
+    .hamburger.is-open:before {
+        content: '';
+        display: block;
+        width: 100px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 32px;
+        text-align: center;
+        opacity: 0;
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-transition: all .35s ease-in-out;
+    }
+    .hamburger.is-open:hover:before {
+        opacity: 1;
+        display: block;
+        -webkit-transform: translate3d(-100px,0,0);
+        -webkit-transition: all .35s ease-in-out;
+    }
+</style>
+<script src="https://goldengodz.com/js/jquery.blockUI.js"></script>
+<link rel="stylesheet" href="https://goldengodz.com/libs/intl-tel-input/css/intlTelInput.css">    </head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="/"><em>Golden Godz</em></a>
+        </li>
+
+                            <li><a href="https://goldengodz.com/shop"><i class="fa fa-fw fa-shopping-cart"></i> Shop</a></li>
+                <li><a href="https://goldengodz.com/orders"><i class="fa fa-fw fa-tags"></i> Your Orders</a></li>
+        
+        <li><a href="https://goldengodz.com/sell-us-an-account"><i class="fa fa-dollar fa-fw"></i> Sell Us An Account</a></li>
+        <li><a href="https://goldengodz.com/contact-us"><i class="fa fa-fw fa-envelope-o"></i> Contact Us</a></li>
+        <li><a href="https://goldengodz.com/contact-us#faq"><i class="fa fa-fw fa-question-circle "></i> F.A.Q.</a></li>
+        <li><a href="https://goldengodz.com/discord" target="_blank" rel="noreferrer"><i class="fa fa-fw fa-microphone"></i> Community Discord</a></li>
+                    <li><a href="/login"><i class="fa fa-fw fa-sign-in"></i> Login</a></li>
+            <li><a href="/register"><i class="fa fa-fw fa-edit"></i> Register</a></li>
+                    </ul>
+</nav>    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas" style="color:#fff !important;">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+                            <div class="row">
+    <div class="info-bar">
+        <div class="text-center">
+            <a href="https://goldengodz.com/shop" alt="Shop">
+                <img src="https://goldengodz.com/img/logos/goldengodz-lg.png" class="img-responsive center-block" />
+            </a>
+        </div>
+    </div>
+</div>
+    <style type="text/css">
+        body {
+            background: url('https://goldengodz.com/img/shopbg.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #clockdiv {
+            font-family: sans-serif;
+            color: #fff;
+            display: inline-block;
+            font-weight: 100;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        #clockdiv > div {
+            padding: 10px;
+            border-radius: 3px;
+            background: #373a3c;
+            display: inline-block;
+        }
+
+        #clockdiv div > span {
+            padding: 15px;
+            border-radius: 3px;
+            background: #26282a;
+            display: inline-block;
+        }
+
+        .smalltext {
+            padding-top: 5px;
+            font-size: 16px;
+        }
+    </style>
+
+
     
-      
-
-      
-      <div id="share-wrapper" class="container">
-        <div id="header" class="clearfix">
-          <div class="pull-left">
-            <h1 class="title">Ink</h1>
-          </div>
-          <div class="pull-right">
-            <a href="#" id="dim-lights"><i class="icon ion-ios-lightbulb"></i></a>
-            <b>Share link:</b>
-            <input value="https://creator.ionic.io/share/0d0e945bbcbb" type="text" class="form-control">
-          </div>
-        </div>
-        <div id="phone-wrapper">
-          <div id="platform-toggle" class="toggle-buttons">
-            <div id="platform-ios" class="toggle-button active" data-value="ios">iOS</div><div id="platform-android" class="toggle-button" data-value="android">Android</div>
-          </div>
-          <div id="phone" class="device-preview">
-            <div class="content">
-              <div id="statusbar"></div>
-              <iframe id="mainframe" src="/share/html/0d0e945bbcbb?ionicplatform=ios">
-              </iframe>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-dark">
+                Welcome to Golden Godz, the GTA: Online, Call of Duty: Black Ops 3, Call of Duty: Black Ops 2, Call of Duty: Modern Warfare 3, Call of Duty: Black Ops, Call of Duty: Advanced Warfare, and Call of Duty: Ghosts services shop. We provide the fastest and most professional Xbox One, PS4, Steam, PC, Xbox 360, and PS3 modding services worldwide. Our packages are listed below for all titles and consoles.                <br><br>
+                Read over 10,000 customer reviews here: <a href="https://www.se7ensins.com/tags/gta-gods/">https://www.se7ensins.com/tags/gta-gods/</a>
             </div>
-          </div>
         </div>
+    </div>
 
-        <div id="footer">
-          <div>
-            <img src="/img/creator-icon.png">
-          </div>
-          <h4>Powered by <a href="https://ionic.io/products/creator">Creator</a></h4>
-          <h5>The fastest way to prototype, share, and ship real mobile apps.</h5>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success">
+                Payment systems are back up and new packages have been added!
+            </div>
         </div>
-      </div>
-      
-      
-      
-  </div>
-  <script src="/js/share.js"></script>
+    </div>
+
+
+    <br>
+                        <div class="row">
+                <div class="col-md-6 ">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>
+                <em class="text-uppercase">PlayerUnknown&#039;s Battlegrounds</em>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+                                    <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(255, 157, 0, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            XBOX ONE RADAR PACKAGE<br/>
+                            PUBG (LIFETIME)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>SHOWS RADAR ON PC &amp; MAC</li>
+<li>SHOWS MAP, ZONE &amp; DROPS</li>
+<li>SHOWS PLAYERS REAL TIME</li>
+<li>SHOWS ITEM LOCATIONS</li>
+<li>SHOWS VEHICLES REAL TIME</li>
+<li>CUSTOMIZE FULLY &amp; NO LAG</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $149.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(255, 157, 0, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/89">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(255, 157, 0, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PC RADAR PACKAGE<br/>
+                            PUBG (LIFETIME)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>SHOWS RADAR ANY DEVICE</li>
+<li>SHOWS MAP, ZONE &amp; DROPS</li>
+<li>SHOWS PLAYERS REAL TIME</li>
+<li>SHOWS ITEM LOCATIONS</li>
+<li>SHOWS VEHICLES REAL TIME</li>
+<li>CUSTOMIZE FULLY &amp; NO LAG</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $249.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(255, 157, 0, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/95">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                        </div>
+</div><div class="col-md-6 ">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>
+                <em class="text-uppercase">Grand Theft Auto V (PC)</em>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+                                    <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(255, 0, 0, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PC GOLD PACKAGE<br/>
+                            GTA V (SERVICE) *ON SALE*
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$12,498 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>1 BILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $59.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(255, 0, 0, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/92">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(255, 0, 0, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PC MOD MENU PACKAGE<br/>
+                            GTA V (MOD MENU)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>LIFETIME MOD MENU</li>
+<li>RANK OPTIONS</li>
+<li>CASH OPTIONS</li>
+<li>STATS, UNLOCKS, MORE</li>
+<li>FUN &amp; TROLL OPTIONS</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $99.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(255, 0, 0, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/93">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                        </div>
+</div>            </div>
+                    <div class="row">
+                <div class="col-md-6 ">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>
+                <em class="text-uppercase">Grand Theft Auto V (Xbox One)</em>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+                                    <div class="col-md-6 ">
+                    <div class="package 
+                        x1 shop21"
+                        style="background:rgba(0, 122, 2, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            XBOX ONE BRONZE PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$3,124 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>250 MILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $269.99 USD
+                            
+                        </div>
+                                                    <div class="x1 shop21 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 122, 2, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/62">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(0, 122, 2, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            XBOX ONE SILVER PACKAGE<br/>
+                            GTA V (SERVICE) *ON SALE*
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$6,249 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>500 MILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $299.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 122, 2, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/10">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2x1zomb x1"
+                        style="background:rgba(0, 122, 2, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            XBOX ONE GOLD PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$12,498 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>1 BILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $399.99 USD
+                            
+                        </div>
+                                                    <div class="bo2x1zomb x1 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 122, 2, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/73">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2x1zomb x1"
+                        style="background:rgba(0, 122, 2, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            XBOX ONE GODS PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$62,493 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>5 BILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $439.99 USD
+                            
+                        </div>
+                                                    <div class="bo2x1zomb x1 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 122, 2, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/77">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                        </div>
+</div><div class="col-md-6 ">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>
+                <em class="text-uppercase">Grand Theft Auto V (PS4)</em>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+                                    <div class="col-md-6 ">
+                    <div class="package 
+                        ps4 shop2"
+                        style="background:rgba(0, 104, 191, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PS4 BRONZE PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$3,124 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>250 MILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $269.99 USD
+                            
+                        </div>
+                                                    <div class="ps4 shop2 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 104, 191, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/14">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        shop12 ps4"
+                        style="background:rgba(0, 104, 191, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PS4 SILVER PACKAGE<br/>
+                            GTA V (SERVICE) *ON SALE*
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$6,249 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>500 MILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $299.99 USD
+                            
+                        </div>
+                                                    <div class="shop12 ps4 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 104, 191, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/35">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(0, 104, 191, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PS4 GOLD PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$12,498 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>1 BILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $399.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 104, 191, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/74">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="col-md-6 ">
+                    <div class="package 
+                        bo2ps3full ps3"
+                        style="background:rgba(0, 104, 191, 0.5)"    
+
+                    >
+                        <div class="p-title text-uppercase">
+                            PS4 GODS PACKAGE<br/>
+                            GTA V (SERVICE)
+                        </div>
+                        <div class="p-box text-uppercase" style="margin-bottom:0px;">
+                            <ul>
+<li>NO CHANCE OF BAN</li>
+<li>$62,493 SHARK CARD VALUE</li>
+<li>CHOOSE RANK</li>
+<li>5 BILLION ADDED TO BANK</li>
+<li>ABILITIES, LSC, UNLOCKS</li>
+<li>NEARLY INSTANT DELIVERY</li>
+</ul>
+
+                        </div>
+                        <div style="font-size:20px;">
+                                                            <br>
+                                                        $439.99 USD
+                            
+                        </div>
+                                                    <div class="bo2ps3full ps3 package-links"
+                                >
+                                <a type="button" 
+                                class="btn btn-default" 
+                                style="background:rgba(0, 104, 191, 1)"
+                                href="https://goldengodz.com/shop/checkout/package/78">BUY NOW!</a>
+                            </div>
+                                            </div>
+                </div>
+                        </div>
+</div>            </div>
+                        <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center" style="margin-bottom:5px;">
+                        <a href="https://goldengodz.com/services-agreement">Terms and Conditions</a> |
+                        <a href="https://goldengodz.com/privacy-policy">Privacy Policy</a> |
+                        <a href="https://goldengodz.com/contact-us">Contact Us</a>
+                    </div>
+                    <div class="text-center" style="margin-bottom:5px;">
+                        &copy; 2018 Golden Godz<br/> All trademarks are property of their respective owners in the US and other countries.<br/>GTA, GTA: V, GTA: 5, GTA: Online, the GTA logo(s), and characters from the famous GTA franchise are copyrights of Take-Two Interactive, Inc. This is a fan website.                    </div>
+                    <div style="margin:10px;text-align:center;font-size:10px;color:#ccc;">
+                        version 2.3.1
+                    </div>
+                </div>
+            </div>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/sweetalert2/6.2.4/sweetalert2.min.js"></script>
+<script src="https://goldengodz.com/js/countdown.min.js?a=12813818"></script>
+<script>
+    window.Laravel = {"csrfToken":"ZLoGKjwTYdatIMhVR6vNcx64605TnvRrgo8GvIb9"};
+</script>
+<script>
+    $(document).ready(function() {
+
+        $("#pay-paypal").on('click', function() {$("#pay-paypal").attr('disabled', 'disabled');});
+        var trigger = $('.hamburger'), overlay = $('.overlay'), isClosed = false;
+        trigger.click(function () {hamburger_cross();});
+        function hamburger_cross() {
+            if (isClosed == true) {
+                trigger.removeClass('is-open');
+                trigger.addClass('is-closed');
+                isClosed = false;
+            } else {
+                trigger.removeClass('is-closed');
+                trigger.addClass('is-open');
+                isClosed = true;
+            }
+        }
+        $('[data-toggle="offcanvas"]').click(function () {$('#wrapper').toggleClass('toggled');});
+    });
+    (function($){$.extend({playSound: function(){return $('<audio autoplay="autoplay" style="display:none;">' + '<source src="' + arguments[0] + '.ogg" />'+ '</audio>').appendTo('body');}});})(jQuery);
+    function transferInfoMessage() {$("#transfer_info").fadeToggle();}
+    function transferStatusNotice() {
+        if ($("#transfer_status").val() == '1') {
+            swal({
+                html: "<p style='text-align: justify;'>You cannot transfer to an account that has already performed a character " +
+                "transfer to or from the account. In order to continue your order, you will have to either use another account " +
+                "that has not performed a character transfer or you will have to create a new account to transfer to. Doing " +
+                "either is safe and easy. Would you like to continue your order?</p>",
+                type:               'warning',
+                showCancelButton:   true,
+                allowOutsideClick:  false,
+                allowEscapeKey:     false,
+                confirmButtonColor: '#D33',
+                cancelButtonColor:  '#3085D6',
+                confirmButtonText:  'Cancel Order',
+                cancelButtonText:   'Continue Order',
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass:  'btn btn-danger'
+            }).then(function () {window.location.href="/shop/cancel";});
+        }
+    }
+    function charGenderNotice() {
+        if ($("#character_gender").val() == '1' && $("#rcType").val() != '5') {
+            swal({
+                html: "<p style='text-align: justify;'>You have chosen to receive a female character which will convert your Automated Order to a " +
+                "Custom Order. Custom Orders may take up to 24 hours to be completed. Are you sure you want to create a Custom Order?</p>",
+                type:               'warning',
+                allowOutsideClick:  false,
+                allowEscapeKey:     false,
+                showCancelButton:   true,
+                confirmButtonColor: '#D33',
+                cancelButtonColor:  '#3085D6',
+                confirmButtonText:  'Custom Order',
+                cancelButtonText:   'Automated Order',
+                confirmButtonClass: 'btn',
+                cancelButtonClass:  'btn'
+            }).then(function() {},
+                function (dismiss) {
+                    $("#character_gender").val(0);
+                }
+            );
+        }
+    }
+    function rankCashNotice() {
+        if ($("#character_gender").val() == '1' && $("#rcType").val() == '5') {
+            $("#rcTypeDiv").fadeIn();
+            $("#ctrlRank_cash_custom").attr('required', true);
+        }
+        else if ($("#character_gender").val() != '1' && $("#rcType").val() == '5'){
+            swal({
+                html: "<p style='text-align: justify;'>You have chosen to receive a Custom Rank which will convert your Automated Order to a Custom Order. " +
+                "Custom Orders may take up to 24 hours to be completed. Are you sure you want to create a Custom Order?</p>",
+                type:               'warning',
+                allowOutsideClick:  false,
+                allowEscapeKey:     false,
+                showCancelButton:   true,
+                confirmButtonColor: '#D33',
+                cancelButtonColor:  '#3085D6',
+                confirmButtonText:  'Custom Order',
+                cancelButtonText:   'Automated Order',
+                confirmButtonClass: 'btn btn',
+                cancelButtonClass:  'btn btn'
+            }).then(
+                function () {
+                    $("#rcTypeDiv").fadeIn();
+                    $("#rank_cash_custom").attr('required', true);
+                },
+                function (dismiss) {
+                    $("#rcTypeDiv").fadeOut();
+                    $("#rcType").val(0);
+                    $("#rank_cash_custom").attr('required', false);
+                }
+            );
+        }
+        else {
+            $("#rcTypeDiv").fadeOut();
+            $("#rank_cash_custom").attr('required', false);
+        }
+    }
+    function steamGuardNotice() {
+        var val = $("#ctrlSteam_guard").val();
+        if (val == 1) {
+            swal({
+                html: "<p style='text-align: justify;'>Steam Guard <strong>MUST</strong> be disabled on your Steam account " +
+                "in order for us to modify it. Please turn it off prior to completing your purchase.</p>",
+                type: 'warning',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showCancelButton: false,
+            }).then(
+                $("#ctrlSteam_guard").val(0)
+            );
+        }
+    }
+    function gameOwnedNotice() {
+        var val = $("#ctrlOwn_gta").val();
+        if (val == 0) {
+            swal({
+                html: "<p style='text-align: justify;'>You <strong>MUST</strong> have Grand Theft Auto: V in the Steam library of the account we are modifying. Please add the game to your library prior to your purchase.</p>",
+                type: 'warning',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showCancelButton: false,
+            }).then(
+                $("#ctrlOwn_gta").val(1)
+            );
+        }
+    }
+    function correctRankValue() {
+        if ($("#ctrlRank_custom").val() > 8000) {
+            $("#ctrlRank_custom").val(8000);
+        }
+        if ($("#ctrlRank_custom").val() < 1) {
+            $("#ctrlRank_custom").val(1);
+        }
+    }
+    function showCouponCodeField() {
+        $("#coupon_code_link").fadeOut(function() {
+            $("#coupon_code").fadeIn();
+        });
+    }
+
+</script>
+<script src="https://goldengodz.com/js/jquery.fittext.js"></script>
+<script src="https://goldengodz.com/libs/intl-tel-input/js/intlTelInput.js"></script>
+<script>
+    $(".phone-input").intlTelInput({
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                callback(countryCode);
+            });
+        },
+        utilsScript: 'https://goldengodz.com/libs/intl-tel-input/js/utils.js'
+    });
+</script>
+                    </div>
+    </div>
+</div>
 </body>
 </html>
